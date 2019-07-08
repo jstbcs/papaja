@@ -472,7 +472,7 @@ apa_table.latex <- function(
 
   # if(longtable && placement != "h") cat("\\afterpage{\\clearpage") # Defer table to next clear page
   cat("\n\n")
-  if(!landscape && !longtable) cat("\\begin{table}", place_opt, sep = "")
+  if(!landscape && !longtable) cat("\\begin{table*}", place_opt, sep = "")
   if(!landscape) cat("\n\\begin{center}\n\\begin{", table_env, "}", sep = "")
   if(!is.null(caption) && !(longtable || landscape)) cat("\n\\caption{", caption, "}", sep = "")
   if(!is.null(note) && (longtable || landscape)) cat("\n\\begin{", table_note_env, "}[para]\n\\normalsize{\\textit{", apa_terms$note, ".} ", note, "}\n\\end{", table_note_env, "}", sep = "")
@@ -482,7 +482,7 @@ apa_table.latex <- function(
   if(!is.null(font_size)) cat("\n}")
   if(!is.null(note) & !(longtable || landscape)) cat("\n\\begin{", table_note_env, "}[para]\n\\normalsize{\\textit{", apa_terms$note, ".} ", note, "}\n\\end{", table_note_env, "}", sep = "")
   if(!landscape) cat("\n\\end{", table_env, "}\n\\end{center}", sep = "")
-  if(!landscape && !longtable) cat("\n\\end{table}")
+  if(!landscape && !longtable) cat("\n\\end{table*}")
 
   if(landscape) {
     # if(longtable) {
